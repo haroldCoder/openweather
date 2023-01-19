@@ -1,0 +1,17 @@
+
+<div class="flex border-b-[1px] border-gray-500 p-3" *ngFor="let dt of data.list; let i = index">
+    
+    <div class="text-gray-300 mt-6 grid gap-7">
+        <h2 class="text-blue-400">{{dates[i]}}</h2>
+        <p>Tempetature: {{dt.main?.temp | number: '1.0-0'}} ºC</p>
+        <p>Humidity: {{dt.main?.humidity}}%</p>
+        <p>Temperature max: {{dt.main?.temp_max | number: '1.0-0'}} ºC</p>
+        <p>Temperature min: {{dt.main?.temp_min | number: '1.0-0'}} ºC</p> 
+        <p>Pressure: {{dt.main?.pressure}}</p>
+        <p>Wind: {{dt.wind?.speed}}km/h</p>
+    </div>
+    <div class="sticky left-[70%] top-[90%] flex flex-col justify-center">
+      <img src="../assets/img/{{dt.weather[0]?.icon}}.png" class="bg-gray-400 rounded-full p-2 w-20 h-20" alt=""/>
+      <p class="text-gray-300">{{dt.weather[0]?.description}}</p>
+    </div>
+</div>
